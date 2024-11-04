@@ -1,6 +1,6 @@
 package errorcode.backend.service;
 
-import errorcode.backend.entity.User;
+import errorcode.backend.domain.entity.User;
 import errorcode.backend.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
