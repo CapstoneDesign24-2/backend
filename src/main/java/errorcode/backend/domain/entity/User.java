@@ -1,5 +1,6 @@
-package errorcode.backend.entity;
+package errorcode.backend.domain.entity;
 
+import errorcode.backend.domain.common.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class User extends BaseEntity {
     @Id
     private String id;
     private String name;
