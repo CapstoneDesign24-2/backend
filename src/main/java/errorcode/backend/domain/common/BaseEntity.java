@@ -7,7 +7,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import java.time.LocalDateTime;
 
 @Getter
-public abstract class BaseEntity {
+public abstract class BaseEntity{
     @CreatedDate
     private LocalDateTime createdAt;
 
