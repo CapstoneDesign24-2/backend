@@ -48,13 +48,13 @@ jobs:
         key: ${{ secrets.EC2_PRIVATE_KEY }} # pem 키
         # 도커 작업
         script: |
-          echo "export ATLAS_CLUSTER_HOST_NAME=${{ secrets.ATLAS_CLUSTER_HOST_NAME }}" >> ~/.zshrc
-          echo "export MONGODB_USERNAME=${{ secrets.MONGODB_USERNAME }}" >> ~/.zshrc
-          echo "export MONGODB_PASSWORD=${{ secrets.MONGODB_PASSWORD }}" >> ~/.zshrc
-          echo "export MONGODB_PASSWORD=${{ secrets.MONGODB_DBNAME }}" >> ~/.zshrc
-          echo "export MONGODB_PASSWORD=${{ secrets.MONGODB_APPNAME }}" >> ~/.zshrc
-
-          source ~/.zshrc
+#          echo "export ATLAS_CLUSTER_HOST_NAME=${{ secrets.ATLAS_CLUSTER_HOST_NAME }}" >> ~/.zshrc
+#          echo "export MONGODB_USERNAME=${{ secrets.MONGODB_USERNAME }}" >> ~/.zshrc
+#          echo "export MONGODB_PASSWORD=${{ secrets.MONGODB_PASSWORD }}" >> ~/.zshrc
+#          echo "export MONGODB_PASSWORD=${{ secrets.MONGODB_DBNAME }}" >> ~/.zshrc
+#          echo "export MONGODB_PASSWORD=${{ secrets.MONGODB_APPNAME }}" >> ~/.zshrc
+#
+#          source ~/.zshrc
           
           sudo docker pull ${{ secrets.DOCKER_USERNAME }}/docker-test:latest
           sudo docker stop $(sudo docker ps -a -q)
