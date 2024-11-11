@@ -14,8 +14,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class User extends BaseEntity {
     @Id
     private String id;
-    private String name;
+    private String loginId;
     private String password;
+    private String name;
     private String email;
 
 }
