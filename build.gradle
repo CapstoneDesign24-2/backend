@@ -34,6 +34,9 @@ dependencies {
 
 	//mongoDB
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+
+	//swagger
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2'
 }
 
 tasks.named('test') {
