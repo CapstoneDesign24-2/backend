@@ -1,6 +1,8 @@
 package errorcode.backend.service;
 
+import errorcode.backend.converter.PostConverter;
 import errorcode.backend.domain.entity.Post;
+import errorcode.backend.dto.PostRequestDTO;
 import errorcode.backend.repository.PostRepository;
 import errorcode.backend.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -17,14 +19,15 @@ public class PostService {
     @Autowired
     private UserRepository userRepository;
 
-    public Post save(Post post) {
+    public Post save(PostRequestDTO.CreatePostDTO request) {
 //        if(!userRepository.existsById(post.getUser_id())){
 //            return null;
 //        }
-        return postRepository.save(post);
+
+        return postRepository.save(PostConverter.toPost(request));
     }
 
-    public Post findById(String post_id) {
-        return postRepository.findById(post_id).orElseThrow(() -> new IllegalArgumentException("해당 게시물이 없습니다"));
+    public Post getPost(String postId, String userId) {
+        return postRepository.findByIdAndUserId(postId, userId);
     }
 }
