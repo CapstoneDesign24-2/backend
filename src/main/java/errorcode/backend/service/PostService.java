@@ -7,6 +7,10 @@ import errorcode.backend.repository.PostRepository;
 import errorcode.backend.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -29,5 +33,10 @@ public class PostService {
 
     public Post getPost(String postId, String userId) {
         return postRepository.findByIdAndUserId(postId, userId);
+    }
+
+    public Page<Post> getPosts(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size, Sort.by("createdAt").descending()); // 최신순 정렬
+        return postRepository.findAll(pageable);
     }
 }
