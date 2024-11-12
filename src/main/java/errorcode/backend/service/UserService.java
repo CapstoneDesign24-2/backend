@@ -17,4 +17,18 @@ public class UserService {
         return userRepository.save(user);
     }
     public User login(UserLogin userLogin) {return userRepository.findByLoginIdAndPassword(userLogin.getLoginId(), userLogin.getPassword());}
+
+    public Boolean duplicateId(String userId){
+        if(userRepository.findById(userId).isPresent()){
+            return true;
+        }
+        return false;
+    }
+
+    public Boolean duplicateNickname(String nickname){
+        if(userRepository.findByNickname(nickname).isPresent()){
+            return true;
+        }
+        return false;
+    }
 }
