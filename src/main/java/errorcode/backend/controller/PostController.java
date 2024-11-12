@@ -5,6 +5,7 @@ import errorcode.backend.domain.entity.Post;
 import errorcode.backend.dto.PostRequestDTO;
 import errorcode.backend.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -18,11 +19,16 @@ public class PostController {
         return ApiResponse.onSuccess(postService.save(request));
     }
 
-    @GetMapping
-    public ApiResponse<Post> getPost(@RequestParam String postId,
-                                     @RequestParam String userId){
+    @GetMapping("/{postId}/{userId}")
+    public ApiResponse<Post> getPost(@PathVariable("postId") String postId,
+                                     @PathVariable("userId") String userId){
         return ApiResponse.onSuccess(postService.getPost(postId, userId));
     }
 
+    @GetMapping
+    public ApiResponse<Page<Post>> getPosts(@RequestParam(defaultValue = "0") int page,
+                                            @RequestParam(defaultValue = "10") int size){
+        return ApiResponse.onSuccess(postService.getPosts(page, size));
+    }
 
 }
