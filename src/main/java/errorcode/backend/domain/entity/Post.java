@@ -18,5 +18,5 @@ public class Post extends BaseEntity {
     private String user_id;
     private String title;
     private String content;
-    private Enum<PostStatus> status;
+    private String status;
 }
