@@ -17,7 +17,7 @@
           <mxGeometry x="670" y="170" width="150" height="40" as="geometry" />
         </mxCell>
         <mxCell id="IkT7S4ouV2nKcYeQMEo2-6" value="프록시 서버" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="282.75" y="241.25" width="80" height="30" as="geometry" />
+          <mxGeometry x="283.8" y="241.25" width="80" height="30" as="geometry" />
         </mxCell>
         <mxCell id="IkT7S4ouV2nKcYeQMEo2-8" value="API 서버" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="442.75" y="241.25" width="70" height="30" as="geometry" />
